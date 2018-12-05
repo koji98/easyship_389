@@ -26,7 +26,7 @@ router.get("/popular/:amount", (req, res) => {
   var amount = parseInt(req.params.amount);
   Internship.find({}, (err, internships) => {
     if (err) {
-      throw new Error("api popular")
+      throw new Error("api popular amount")
     } else {
       res.json(internships.sort((a,b) => a.popularity < b.popularity).slice(0,amount));
     }

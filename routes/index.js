@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
 router.get("/new", (req, res) => {
   Internship.find({}, (err, internships) => {
     if (err) {
-      throw new Error("Landing page get")
+      throw new Error("new page get")
     } else {
       res.render("landing", {internships: internships.sort((a,b) => b.createdAt - a.createdAt)});
     }
@@ -31,7 +31,7 @@ router.get("/new", (req, res) => {
 router.get("/alphabetical", (req, res) => {
   Internship.find({}, (err, internships) => {
     if (err) {
-      throw new Error("Landing page get")
+      throw new Error("alphabetical page get")
     } else {
       res.render("landing", {internships: internships.sort((a,b) => a.company > b.company)});
     }
@@ -41,7 +41,7 @@ router.get("/alphabetical", (req, res) => {
 router.get("/random", (req, res) => {
   Internship.find({}, (err, internships) => {
     if (err) {
-      throw new Error("Landing page get")
+      throw new Error("random page get")
     } else {
       res.render("landing", {internships: internships.sort(() => Math.random() - .5)});
     }
@@ -51,7 +51,7 @@ router.get("/random", (req, res) => {
 router.get("/popular", (req, res) => {
   Internship.find({}, (err, internships) => {
     if (err) {
-      throw new Error("Landing page get")
+      throw new Error("popular page get")
     } else {
       res.render("landing", {internships: internships.sort((a,b) => a.popularity < b.popularity)});
     }
@@ -61,7 +61,7 @@ router.get("/popular", (req, res) => {
 router.get("/states", (req, res) => {
   Internship.find({}, (err, internships) => {
     if (err) {
-      throw new Error("Landing page get")
+      throw new Error("states page get")
     } else {
       res.render("states", {states});
     }
@@ -72,7 +72,7 @@ router.get("/states/:state", (req, res) => {
   const state = req.params.state;
   Internship.find({}, (err, internships) => {
     if (err) {
-      throw new Error("Landing page get")
+      throw new Error("specific state page get")
     } else {
       res.render("landing", {internships: internships.filter(a => a.location.includes(state))});
     }

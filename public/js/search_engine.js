@@ -8,6 +8,7 @@ $(function() {
   search.on("keyup", function() {
     var text = $("input").val();
     if(text.length == 0) {
+      $('.empty').hide();
       $("h1").each(function() {
         $(this).show();
       });
@@ -22,8 +23,13 @@ $(function() {
           $(this).hide();
         } else {
           $(this).show();
+          $('.empty').hide();
         }
       });
+
+      if(filtered_list.length === 0){
+        $('.empty').show();
+      }
 
     }
   });

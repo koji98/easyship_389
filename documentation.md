@@ -8,7 +8,7 @@ Date: Dec 1st, 2018
 
 Project Topic: Helping students find internships
 
-URL: http://103.283.293.13:3000/
+URL: https://easyship.herokuapp.com/
  ---
 
 ### 1. Data Format and Storage
